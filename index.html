@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stardew Save Fixes</title>
+</head>
+<body>
+    <p class="no-js">Javascript failed to load, please check your script blocker</p>
+    <div class="content" hidden>
+        <header class="no-save">
+            Select your Stardew Valley save file
+            (<a href="https://stardewvalleywiki.com/Saves#Find_your_save_files">how?</a>):
+            <input type="file" id="input" onchange="handleFiles(this.files)" alt="FarmName_123465789 or SaveGameInfo">
+            <br>
+            Save type: <span id="save_type">N/A</span>
+        </header>
+        <nav class="tabs">
+            <ul>
+                <li>Fix extra <code>newLevels</code></li>
+            </ul>
+        </nav>
+        <div class="tabbed">
+            <section id="newlvl">
+                <p class="desc">
+                    This fixes the bug where you get multiple Level Up dialogs when going to bed,
+                    even if you have already seen those dialogs. Introduced in version 1.5 of the game.
+                    <a href="https://forums.stardewvalley.net/threads/bug-duplicate-skill-level-up-popups.4486/">Bug report on the forums from 2021-01-11.</a>
+                </p>
+                <p class="howto">
+                    Below are displayed all players detected in your save file, and their <code>newLevels</code> values.
+                    If you see extra levels, click the button to remove them.
+                    In the event that you have this bug, but this doesn't show anything, contact me with your save file.
+                </p>
+                <ul id="newlvl-players"></ul>
+            </section>
+        </div>
+        <footer>
+            Download your modified save file:
+            <span id="dl-button"></span><br>
+            Don't forget to overwrite the existing save file with this one.
+        </footer>
+    </div>
+    <footer>
+        Built by Zeroji in June 2021.
+        <a href="https://github.com/Zeroji/stardew-save-fixes">View on Github</a>.
+        Disclaimer: no warranty, backup your save first!
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
